@@ -7,9 +7,7 @@
         <div name="sidebar">
           <SideBar />
         </div>
-        <div name="mainbody">
-          <MainBody />
-        </div>
+        <MainBody />
       </div>
     </v-main>
   </v-app>
@@ -36,10 +34,6 @@ export default {
 </script>
 
 <style scoped>
-.profile-divider {
-  border-width: 1px !important;
-}
-
 .main-height {
   height: 100%;
 }

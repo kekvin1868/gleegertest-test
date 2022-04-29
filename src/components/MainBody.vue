@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row class="mx-3 my-3">
-      <v-col class="pl-14 pt-6" cols="5">
+      <v-col class="pl-14 pt-6" cols="12" md="5">
         <p 
           style="color: #2962FF"
           class="text-h2 font-weight-normal"
@@ -9,19 +9,19 @@
           Welcome.
         </p>
       </v-col>
-      <v-col class="pt-6" cols="7">
+      <v-col class="pt-6" cols="12" md="7">
         <v-card class="user-status-info" rounded color="#2962FF">
           <v-row class="d-flex ml-1">
             <v-col cols="7" class="pb-0">
               <v-card-title class="py-0">
-                <span class="text-subtitle-1 white--text ">
+                <span class="overflow-x-auto text-subtitle-1 white--text ">
                   Email
                 </span>
               </v-card-title>
             </v-col>
             <v-col cols="5" class="pb-0">
               <v-card-title class="py-0">
-                <span class="text-subtitle-1 white--text">
+                <span class="overflow-x-auto text-subtitle-1 white--text">
                   Country
                 </span>
               </v-card-title>
@@ -29,16 +29,16 @@
           </v-row>
 
           <v-row class="d-flex ml-1">
-            <v-col cols="7" class="py-0">
+            <v-col cols="7" class="py-0 i">
               <v-card-title class="py-0">
-                <span class="font-weight-black white--text">
+                <span class="overflow-x-auto font-weight-black white--text">
                   Test@sparrowexchange.com
                 </span>
               </v-card-title>
             </v-col>
             <v-col cols="5" class="py-0">
               <v-card-title class="py-0">
-                <span class="font-weight-black white--text">
+                <span class="overflow-x-auto font-weight-black white--text">
                   IDN
                 </span>
               </v-card-title>
@@ -118,9 +118,9 @@
       </v-col>
     </v-row>
 
-    <v-container>
+    <v-container fluid class="mx-0">
       <v-row class="mx-3">
-        <v-col class="pl-8 mt-2" cols="5">
+        <v-col class="pl-8 mt-2" cols="12" md="5">
           <v-list class="pt-0" dense>
             <v-list-item class="activity-list">
               <v-list-item-title>
@@ -193,7 +193,7 @@
           </v-list>
         </v-col>
 
-        <v-col class="mt-2 pr-0" cols="7">
+        <v-col class="mt-2 pr-0" cols="12" md="7">
           <div class="mb-3">
             <span class="font-weight-light text-h4">
               Personal Account
