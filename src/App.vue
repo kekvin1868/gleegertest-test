@@ -12,7 +12,7 @@
 
       <div class="mx-4" align-content="center" name="bitcoin-area">
         <div md="4" class="my-0 py-0" name='bc-title-field'>
-          <v-icon color="#2962FF">mdi-bitcoin</v-icon>
+          <v-icon color="#FFCA28">mdi-bitcoin</v-icon>
           <span class="ml-1 font-weight-medium">Bitcoin</span>
         </div>
         <div md="4" class="my-0 py-0" name="bc-currency-field">
@@ -23,7 +23,7 @@
 
       <div class="mx-4" align-content="center" name="ethereum-area">
         <div md="4" class="my-0 py-0" name="eth-title-field">
-          <v-icon color="#2962FF">mdi-ethereum</v-icon>
+          <v-icon color="#C5CAE9">mdi-ethereum</v-icon>
           <span class="ml-1 font-weight-medium">Ethereum</span>
         </div>
         <div md="4" class="my-0 py-0" name="eth-currency-field">

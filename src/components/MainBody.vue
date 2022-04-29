@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row class="mx-3 my-3">
-      <v-col class="pl-8 pt-6" cols="5">
+      <v-col class="pl-14 pt-6" cols="5">
         <p 
           style="color: #2962FF"
           class="text-h2 font-weight-normal"
@@ -122,11 +122,11 @@
 
     <v-container>
       <v-row class="mx-3">
-        <v-col class="pl-8" cols="5">
-          <v-list dense>
+        <v-col class="pl-8 mt-2" cols="5">
+          <v-list class="pt-0" dense>
             <v-list-item class="activity-list">
               <v-list-item-title>
-                <span class="text-h5">
+                <span class="font-weight-light text-h4">
                   Last Login
                 </span>
               </v-list-item-title>
@@ -151,6 +151,72 @@
               </v-list-item-subtitle>
             </v-list-item>
           </v-list>
+
+          <v-list class="my-12" dense>
+            <v-list-item class="activity-list">
+              <v-list-item-title>
+                <span class="font-weight-light text-h4">
+                  My Product
+                </span>
+              </v-list-item-title>
+            </v-list-item>
+
+            <v-list-item class="activity-list mb-1">
+              <v-divider></v-divider>
+            </v-list-item>
+
+            <v-list-item 
+              v-for="(item, i) in products"
+              :key="i"
+            >
+              <v-row align="center" class="mx-1"> 
+                <v-col cols="9">
+                  <v-row>
+                    <v-col cols="12" class="pb-0">
+                      <span class="font-weight-medium text-body-1">
+                        {{ item.title }}
+                      </span>
+                    </v-col>
+                    
+                    <v-col cols="12" class="pt-0">
+                      <span class="text-caption text--secondary">
+                        {{ item.desc }}
+                      </span>
+                    </v-col>
+                  </v-row>
+                </v-col>
+                <v-col cols="3">
+                  <v-switch
+                    v-model="item.value"
+                  />
+                </v-col>
+              </v-row>
+            </v-list-item>
+          </v-list>
+        </v-col>
+
+        <v-col class="mt-2 pr-0" cols="7">
+          <div class="mb-3">
+            <span class="font-weight-light text-h4">
+              Personal Account
+            </span>
+          </div>
+          
+          <v-data-table
+            :headers="coinHeaders"
+            :items="coins"
+            :item-per-page="5"
+            class="elevation-4"
+          >
+            <template v-slot:[`item.asset`]="{ item }">
+              <span>
+                <v-icon color="#2962FF" v-if="item.asset === 'SP$'">mdi-currency-usd</v-icon>
+                <v-icon color="#FFCA28" v-else-if="item.asset === 'BTC'">mdi-bitcoin</v-icon>
+                {{ item.asset }}
+              </span>
+            </template>
+          </v-data-table>
+          
         </v-col>
       </v-row>
     </v-container>
@@ -162,7 +228,31 @@ export default {
   name: 'MainBody',
 
   data: () => ({
-    //
+    coinHeaders: [
+      { text: 'Assets', align: 'start', value: 'asset' },
+      { text: 'Total', align: 'start', value: 'total' },
+      { text: 'Available', align: 'start', value: 'available' },
+      { text: 'Locked', align: 'start', value: 'lock' },
+    ],
+    coins: [
+      { asset: 'SP$', total: 88888.88, available: 88888.88, lock: 88888.88 },
+      { asset: 'BTC', total: 88888.88, available: 88888.88, lock: 88888.88 },
+      { asset: 'BTC', total: 88888.88, available: 88888.88, lock: 88888.88 },
+      { asset: 'BTC', total: 88888.88, available: 88888.88, lock: 88888.88 },
+      { asset: 'BTC', total: 88888.88, available: 88888.88, lock: 88888.88 },
+      { asset: 'BTC', total: 88888.88, available: 88888.88, lock: 88888.88 },
+    ],
+    products: [
+      { title: 'ConvertNOW', desc: 'Required', value: 0 },
+      { title: 'Options', desc: '', value: 0 },
+      { title: 'Structured Products', desc: 'To change status please contact your Relationship Manager.', value: 0 },
+    ],
   }),
 };
 </script>
+
+<style scoped>
+.v-list-item.activity-list {
+  min-height: 20px;
+}
+</style>
