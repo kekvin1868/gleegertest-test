@@ -11,7 +11,6 @@
       </v-col>
       <v-col class="pt-6" cols="7">
         <v-card class="user-status-info" rounded color="#2962FF">
-
           <v-row class="d-flex ml-1">
             <v-col cols="7" class="pb-0">
               <v-card-title class="py-0">
@@ -115,7 +114,6 @@
               </v-card-title>
             </v-col>
           </v-row>
-
         </v-card>
       </v-col>
     </v-row>

@@ -72,7 +72,9 @@
         <div name="sidebar">
           <SideBar />
         </div>
-        <MainBody />
+        <div name="mainbody">
+          <MainBody />
+        </div>
       </div>
     </v-main>
   </v-app>
