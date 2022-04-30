@@ -37,39 +37,41 @@
     </v-toolbar-items>
 
     <v-spacer></v-spacer>
-
-    <v-toolbar-items 
-      v-for="(item, i) in toolbarItems"
-      :key="i"
-    >
-      <div class="mx-1 mt-4" v-if="item.title === 'Account'">
-        <v-btn icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-btn>
-      </div>
-      <div class="mx-1 mt-4" v-else-if="item.title === 'Earth'">
-        <v-btn icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-btn>
-      </div>
-      <div class="mx-1 mt-6" v-else-if="item.title === 'Settlement Price'">
-        <v-btn rounded outlined color="blue">
-          <span class="font-weight-medium text-caption">
-            Settlement Price
-          </span>
-        </v-btn>
-      </div>
-      <div class="mx-1 my-4" v-else-if="item.title === 'vertical'">
-        <v-divider class="profile-divider" vertical />
-      </div>
-      <div class="mx-1 mt-6" v-else>
-        <v-btn text rounded>
-          <span class="font-weight-medium text-caption">
-            {{ item.title }}
-          </span>
-        </v-btn>
-      </div>
-    </v-toolbar-items>
+    
+    <div name="scrollable" class="d-flex overflow-x-auto">
+      <v-toolbar-items
+        v-for="(item, i) in toolbarItems"
+        :key="i"
+      >
+        <div class="mx-1" v-if="item.title === 'Account'">
+          <v-btn icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-btn>
+        </div>
+        <div class="mx-1" v-else-if="item.title === 'Earth'">
+          <v-btn icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-btn>
+        </div>
+        <div class="mx-1 mt-2" v-else-if="item.title === 'Settlement Price'">
+          <v-btn rounded outlined color="blue">
+            <span class="font-weight-medium text-caption">
+              Settlement Price
+            </span>
+          </v-btn>
+        </div>
+        <div class="mx-1 my-2" v-else-if="item.title === 'vertical'">
+          <v-divider class="profile-divider" vertical />
+        </div>
+        <div class="mx-1 mt-2" v-else>
+          <v-btn text rounded>
+            <span class="font-weight-medium text-caption">
+              {{ item.title }}
+            </span>
+          </v-btn>
+        </div>
+      </v-toolbar-items>
+    </div>
   </v-toolbar>
 </template>
 
